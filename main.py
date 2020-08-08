@@ -12,11 +12,14 @@ if __name__ == '__main__':
     sample_data2 = {"NAME": "Ashiraf", "AGE": 34, "ADDRESS": "KAGOMA", "SALARY": 10000000}
     sample_table = "COMPANY"
 
+    # Create provider and initialize it
     sqlite_provider = SQLLiteDatabase("testDB.sqlite")
     sqlite_provider.execute_query(drop_existing_table)
     sqlite_provider.execute_query(sql_table_aquery)
 
+    # get the singleton instance
     db = Database.get_instance()
+    # attach the provider
     db.set_provider(sqlite_provider)
 
     print("Create and Read.............")
