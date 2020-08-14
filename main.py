@@ -1,4 +1,5 @@
-from Database import Database, SQLLiteDatabase
+from Database import Database
+from SQLiteDb import SQLiteDatabase
 
 if __name__ == '__main__':
     drop_existing_table = "DROP TABLE IF EXISTS COMPANY;"
@@ -13,7 +14,7 @@ if __name__ == '__main__':
     sample_table = "COMPANY"
 
     # Create provider and initialize it
-    sqlite_provider = SQLLiteDatabase("testDB.sqlite")
+    sqlite_provider = SQLiteDatabase("testDB.sqlite")
     sqlite_provider.execute_query(drop_existing_table)
     sqlite_provider.execute_query(sql_table_aquery)
 
